@@ -5,7 +5,7 @@ const router = Router()
 
 router.post('/recipes/register', linksController.postRecipe)
 
-router.get('/recipes', linksController.getRecipe)
+router.get('/recipes/:id', linksController.getRecipe)
 
 router.get('/allrecipes', linksController.getAllRecipes)
 

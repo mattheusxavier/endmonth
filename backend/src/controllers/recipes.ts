@@ -1,9 +1,13 @@
 import { Request, Response } from 'express'
 import { Recipe } from '../models/recipes'
 
+export interface RecipeFind {
+    id?: number
+}
+
 const recipes : Recipe[] = []
 
-let proxId = 0
+let proxId = 1
 
 function postRecipe(req: Request, res: Response) {
     const recipe = req.body as Recipe
@@ -18,6 +22,12 @@ function getAllRecipes(req: Request, res: Response) {
 }
 
 function getRecipe(req: Request, res: Response) {
+    const id = Number(req.params.id)
+    const recipe = recipes.find( (item: RecipeFind) => item.id === id)
+    if(!id)
+        res.sendStatus(404)
+    else
+        res.json(recipe)
 }
 
 export default { 
