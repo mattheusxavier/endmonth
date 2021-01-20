@@ -1,12 +1,15 @@
 import { Router } from 'express'
-import linksController from '../controllers/recipes'
+import ingredients from '../controllers/ingredients'
+import recipeController from '../controllers/recipes'
 
-const router = Router()
+const routerRecipe = Router()
 
-router.post('/recipes/register', linksController.postRecipe)
+routerRecipe.post('/recipes/register', recipeController.postRecipe)
 
-router.get('/recipes/:id', linksController.getRecipe)
+routerRecipe.post('/ingredient/register', ingredients.postIngredints)
 
-router.get('/allrecipes', linksController.getAllRecipes)
+routerRecipe.get('/recipes/:id', recipeController.getRecipe)
 
-export default router
+routerRecipe.get('/allrecipes', recipeController.getAllRecipes)
+
+export default routerRecipe

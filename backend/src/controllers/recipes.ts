@@ -13,6 +13,7 @@ function postRecipe(req: Request, res: Response) {
     const recipe = req.body as Recipe
     recipe.id = proxId++
     recipes.push(recipe)
+
     res.status(201).json(recipe)
 }
 
