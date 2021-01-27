@@ -1,4 +1,4 @@
-export type Ingredients = {
+export type Ingredient = {
     id?: number,
     name: string,
     amount: string

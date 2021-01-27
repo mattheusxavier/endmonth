@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { Recipe } from '../models/recipes'
+import { Recipe } from '../models/recipe'
 
 export interface RecipeFind {
     id?: number

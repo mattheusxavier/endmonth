@@ -1,5 +1,5 @@
 import express from 'express'
-import linksRouter from './routes/recipe'
+import linksRouter from './routes/routers'
 
 const app = express()
 app.use(express.json())
